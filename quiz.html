@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="C:\Users\DELL\OneDrive\Desktop\SKQuiz\quiz.css">
+    <title> TRIVIA QUIZ </title>
+</head>
+
+<body>
+
+    <div id="home" class="home-bg">
+        <img src="https://img.freepik.com/premium-vector/quiz-comic-pop-art-style-quiz-brainy-game-word-vector-illustration-design_180786-81.jpg?w=900" class="home-icon" />
+        <div class="pr-4 pl-4 pt-2 pb-2 text-center">
+            <button id="playBtn" class="home-play-btn"> Start </button>
+            <p class="home-para mt-5 d-none d-md-block text-center"> This Quiz is to bring you a great insights in Technical skills like Coding... </p>
+        </div>
+    </div>
+
+    <div id="lang" class="d-none home-bg pr-4 pl-4 pt-2 pb-2 text-center">
+        <div>
+            <img src="https://img.freepik.com/premium-vector/quiz-comic-pop-art-style_175838-505.jpg?ga=GA1.1.256515248.1746268162&semt=ais_hybrid&w=740" class="home-icon" />
+
+        </div>
+        <div>
+            <p class="lang"> Select Language : </p>
+            <div class="container">
+                <div class="row m-auto">
+                    <div class="text-center">
+                        <button id="coursePy" class="col-4 col-sm-3 col-lg-2 home-course-btn m-1"> Python </button>
+                        <button id="courseHtml" class="col-4 col-sm-3 col-lg-2 home-course-btn m-1"> HTML </button>
+                        <button id="courseCss" class="col-4 col-sm-3 col-lg-2 home-course-btn m-1"> CSS </button>
+                        <button id="courseJs" class="col-4 col-sm-3 col-lg-2 home-course-btn m-1"> JS </button>
+                        <button id="courseBs" class="col-4 col-sm-3 col-lg-2 home-course-btn m-1"> Bootstrap </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="rules" class="home-bg d-none">
+        <div class="rules">
+            <p> Instructions: </p>
+            <ol>
+                <li>Click "Start Quiz" button to start the test.</li>
+                <li> Total number of questions: 10 </li>
+                <li> Type of Questions: MCQs </li>
+                <li> All questions have equal weightage. Every correct response gets +1 mark and No negative marking.</li>
+                <li class="text-danger"> Warning: Your test will be terminated if you move out of the test window. </li>
+                <li class="text-primary">Note: Turn off all your Notifications and check you have a stable internet connection.</li>
+            </ol>
+            <input class="point" type="checkbox" id="checkBox" />
+            <label class="point" for="checkBox"> I agree to the above rules and conditions. </label>
+            <div class="text-center">
+                <button id="exam" class="btn btn-primary" disabled="true"> Start Quiz</button>
+            </div>
+        </div>
+    </div>
+    <div id="game" class="game-bg d-none">
+
+        <div class="top-card mb-5">
+            <p class="counter text-center"> Question : <span id="countqstn"> 0 </span></p>
+            <div>
+                <img src="https://img.freepik.com/free-vector/question-mark-sign-template-with-chat-bubble-design_1017-58633.jpg?ga=GA1.1.256515248.1746268162&semt=ais_hybrid&w=740" class="game-icon" />
+            </div>
+            <p class="counter text-center"> Score : <span id="gameScore"> 0 </span></p>
+        </div>
+
+        <h1 id="scoreTotal" class="score d-none"> You scored <span id="score" class="scored"> </span> percentage </h1>
+        <button id="backBtn" class="d-none btn btn-primary pr-4 pl-4 pt-2 pb-2 m-3"> Home </button>
+
+        <!-- Button trigger modal -->
+        <button id="pop" type="button" class="btn mb-1 d-none pop" data-toggle="modal" data-target="#staticBackdrop">
+            click me for CODE
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade h-50" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel"> Code Snippet : </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="popin" class="modal-body">
+                        ....
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="bottom" class="bottom">
+
+            <div class="btm-card mb-2">
+
+                <div class="line"> <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="40px" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+                    </svg> </div>
+
+                <h5 id="head" class="head"> </h5>
+                <div class="line"> <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="40px" fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+                    </svg> </div>
+
+
+            </div>
+
+            <div class="options m-2">
+                <button id="opt1" class="item"> </button>
+                <span class="ml-2 mr-1"></span>
+                <button id="opt2" class="item"> </button>
+            </div>
+            <div class="options m-2">
+                <button id="opt3" class="item"> </button>
+                <span class="ml-2 mr-1"></span>
+                <button id="opt4" class="item"> </button>
+
+            </div>
+            <button id="nxtBtn" class="d-none mt-5 w-25 btn btn-primary">Next</button>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+
+    </script>
+</body>
+
+</html>
