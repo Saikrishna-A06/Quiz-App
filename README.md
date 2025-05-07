@@ -8,7 +8,7 @@ This is a responsive **Trivia Quiz** web application designed using **HTML**, **
 
 ```
 /TriviaQuiz
-├── index.html      # Main HTML file
+├── quiz.html      # Main HTML file
 ├── quiz.css        # Custom styles
 ├── quiz.js         # Quiz logic & interactivity
 ├── README.md       # Project documentation
@@ -42,7 +42,7 @@ This is a responsive **Trivia Quiz** web application designed using **HTML**, **
 
 1. Clone or download the project folder.
 2. Make sure `quiz.css` and `quiz.js` are in the same directory as `index.html`.
-3. Open `index.html` in any modern browser (Chrome recommended).
+3. Open `quiz.html` in any modern browser (Chrome recommended).
 
 ---
 
